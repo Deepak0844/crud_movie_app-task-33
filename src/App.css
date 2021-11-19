@@ -1,38 +1,214 @@
-.App {
-  text-align: center;
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+*{
+   margin: 0;
+   padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inputs {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: auto;
+  padding:100px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.movies{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.poster{
+  float: left;
+  width:300px;
+  height: 350px;
+  margin-right: 25px;
+}
+h1{
+  padding: 20px 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+  text-align:left;
+  font-size:32px;
+}
+.details{
+  display: flex;
+}
+.details>p{
+  padding-right: 30px;
+}
+.information{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 12px;
+ padding-left: 8px;
+}
+.movieDetails{
+   width: 800px;
+   height: 350px;
+   border-radius: 8px;
+   overflow: hidden;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   margin-bottom: 100px;
+   margin-top: 50px; 
+}
+.text{
+  color: rgb(255, 30, 0);
+  cursor: pointer;
+  padding: 5px;
+}
+.fa{
+  color: orange;
+}
+.text{
+  position: relative;
+  top: -12px;
+}
+.edit-delete-button{
+  display: flex;
+  padding-top: 10px;
+  width: 50px;
+  gap: 20px;
+  padding: 0;
+}
+.likedislikebtn{
+  border: none;
+  color: #dce1e5;
+  background-color: transparent;
+  font-size: 20px;
+  margin: 10px 30px 10px 9px;
+  padding: 0px;
+}
+.movie_details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+}
+.movieTrailer{
+  max-width: 1500px;
+  width: 100%;
+}
+.details_info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba( 253, 253, 253, 0.1 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+}
+.home{
+  margin-top: 50px;
+  position: absolute;
+  left: 40%;
+  font: bold 200% ;
+  border-right:0.1em solid ;
+  width:250px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(20,end),cursor-blink 0.5s step-end infinite alternate;
+}
+@media (max-width:800px){
+.details{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.inputs {
+  padding: 15px;
+}
+.details>p{
+  padding-right: 30px;
+}
+.information{
+  justify-content: center;
+}
+.text{
+    position: relative;
+    top: -6px;
+
+}
+.edit-delete-button{
+  padding:0 95px;
+}
+.likedislikebtn{
+  padding-left:75px;
+  padding-bottom: 20px;
+  margin: 0;
+}
+body{
+  background-color: #dce1e5;
+}
+.poster{
+    width: 300px;
+    height: 300px;
+}
+.movieDetails{
+    display: flex;
+    height: auto;
+    width: 300px;
+    flex-direction: column;
+}
+.info-title{
+  text-align: center;
+  padding: 10px;
+}
+h1{ 
+    font-weight:400;
+    text-align:center;
+    font-size:22px;
+    padding: 5px 10px;
+} 
+.details,.information{
+    padding:0 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.details>p,.information>p{
+padding:5px;
+margin: 0;
+}
+.home{
+  left: 17%;
+  margin-left: auto;
+}
+}
+.input-searchBox{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 350px;
+  margin-top:50px ;
+}
+.errorpage{
+  width: 100%;
+  height: 100vh;
+}
+.addSaveBtn{
+  display: flex;
+  justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes typing {
+  from{
+    width: 0;
+  }
+}
+@keyframes cursor-blink {
+  50%{
+    border-color: transparent;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
