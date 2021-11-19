@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { useHistory } from "react-router-dom";
 
+//when info btn clicked details page will display
 export function MovieDetails() {
   const { id } = useParams();
   const [movie,setMovie] = useState({})

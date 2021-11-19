@@ -40,6 +40,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
           <Button onClick={()=>history.push("/addMovie")} variant="Text" color="inherit">
           Add Movie
           </Button>
+          {/* dark mode and light mode */}
           <Button  
           style={{marginLeft:"auto"}}
           startIcon = {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}

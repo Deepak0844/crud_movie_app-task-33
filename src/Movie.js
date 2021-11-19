@@ -4,6 +4,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import {useHistory} from "react-router-dom";
 import Card from '@mui/material/Card';
 
+//display the movie list 
 export function Movie({ title, image, rating,releaseDate, runningTime, Genre,id,deleteButton,editButton }) {
   const history=useHistory();
   const styles = {

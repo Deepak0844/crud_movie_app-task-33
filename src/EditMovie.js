@@ -5,9 +5,11 @@ import { useState,useEffect } from 'react';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { useHistory } from "react-router-dom";
 
+//to update movie details in api
 export function EditMovie() {
   const { id } = useParams();
   const [movie,setMovie] = useState(null)
+  //get the data to display in input fields
   useEffect(()=>{
     fetch(`https://6166c4db13aa1d00170a66fd.mockapi.io/movies/${id}`)
     .then((data)=>data.json())
@@ -15,6 +17,7 @@ export function EditMovie() {
   },[id])
 return movie ? <UpdateMovie movie={movie}/> :" "
 }
+
 function UpdateMovie({movie}){
   const history = useHistory();
   const [movieName, setMovieName] = useState(movie.title);
@@ -36,15 +39,17 @@ function UpdateMovie({movie}){
       Genres: movieGenres,
       trailer: movietrailer
     };
+    //when save btn clicked updated value updates updates to api 
     fetch(`https://6166c4db13aa1d00170a66fd.mockapi.io/movies/${movie.id}`,
     {method:"PUT",
   body:JSON.stringify(UpdatedMovie),
   headers: {
     'Content-Type': 'application/json'
   }
-}).then(()=>history.push("/movies"));
+}).then(()=>history.push("/movies"));//after updating display movie list page
   }
   return (
+      //input field
     <div className="inputs">
       <TextField value={movieName} onChange={(event) => setMovieName(event.target.value)} id="standard-basic" label="Movie Name" variant="standard" />
       <TextField value={movieRating} onChange={(event) => setMovieRating(event.target.value)} id="standard-basic" label="Rating" variant="standard" />
@@ -60,6 +65,7 @@ function UpdateMovie({movie}){
           variant="outlined">Save</Button>
       </div>
       <div>
+         {/* back button */}
         <Button variant="outlined" onClick={() => history.goBack()} startIcon={<KeyboardBackspaceIcon />}>
           Back
         </Button>

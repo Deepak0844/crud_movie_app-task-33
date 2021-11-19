@@ -7,13 +7,14 @@ import { useEffect, useState } from 'react';
 export function MovieList(){
     const [movies,setMovies] = useState([])
     const history=useHistory();
+    //fetching movie list
     const getMovies =()=>{
         fetch("https://6166c4db13aa1d00170a66fd.mockapi.io/movies/")
         .then((data)=>data.json())
         .then((mvs)=>setMovies(mvs))
 }
     useEffect(getMovies,[]);
-
+//deleting the movie 
     const deleteMovie = (id)=>{
         fetch(`https://6166c4db13aa1d00170a66fd.mockapi.io/movies/${id}`,
         {method:"DELETE",

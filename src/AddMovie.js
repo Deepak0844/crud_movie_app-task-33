@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { useHistory } from "react-router-dom";
 import { useState } from 'react';
-
+//to add movie in api
 export function AddMovie() {
   const history = useHistory();
   const [movieName, setMovieName] = useState("");
@@ -15,7 +15,7 @@ export function AddMovie() {
   const [movieGenres, setMovieGenres] = useState("");
   const [movietrailer, setMovieTrailer] = useState("");
   const addMovie = () => {
-    const UpdatedMovie = {
+    const newMovie = {
       title: movieName,
       image: moviePoster,
       rating: movieRating,
@@ -27,13 +27,14 @@ export function AddMovie() {
 };
     fetch(`https://6166c4db13aa1d00170a66fd.mockapi.io/movies`,
     {method:"POST",
-  body:JSON.stringify(UpdatedMovie),
+  body:JSON.stringify(newMovie),//adding movie 
   headers: {
     'Content-Type': 'application/json'
   }
-}).then(()=>history.push("/movies"));
+}).then(()=>history.push("/movies"));//after adding movie move to movies list page
   }
   return (
+    //input field
     <div className="inputs">
     <TextField placeholder="Enter Movie Title"
       onChange={(event) => setMovieName(event.target.value)} variant="standard" />
@@ -55,6 +56,7 @@ export function AddMovie() {
     <Button onClick= {addMovie} variant="contained" className="add-button">Add Movie</Button>
     </div>
     <div>
+      {/* back button */}
         <Button variant="outlined" onClick={() => history.goBack()} startIcon={<KeyboardBackspaceIcon />}>
           Back
         </Button>
